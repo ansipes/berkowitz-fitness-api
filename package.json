@@ -1,0 +1,22 @@
+{
+  "name": "berkowitz-fitness-api",
+  "version": "1.0.0",
+  "description": "The API portion of the Berkowitz Fitness App.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansipes/berkowitz-fitness-api.git"
+  },
+  "keywords": [
+    "fitness"
+  ],
+  "author": "Andrew Nicholas Sipes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ansipes/berkowitz-fitness-api/issues"
+  },
+  "homepage": "https://github.com/ansipes/berkowitz-fitness-api#readme"
+}
