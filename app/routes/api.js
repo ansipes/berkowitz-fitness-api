@@ -3,6 +3,28 @@ const models = require('./../../models')
 module.exports = function (server) {
 
   /*
+    Create a User
+  */
+
+  server.post('/api/users', function (req, res) {
+
+    models.User.create({
+      firstName: req.body.firstName,
+      middleName: req.body.middleName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      birthDay: req.body.birthDay,
+      birthMonth: req.body.birthMonth,
+      birthYear: req.body.birthYear,
+      height: req.body.height,
+      weight: req.body.weight
+    }).then(function (result) {
+      res.json(result)
+    })
+
+  })
+
+  /*
     Read all Users
   */
 
@@ -27,4 +49,45 @@ module.exports = function (server) {
     
   })
 
+  /*
+    Create a User
+  */
+
+  server.put('/api/users/:id', function (req, res) {
+
+    models.User.update({
+      firstName: req.body.firstName,
+      middleName: req.body.middleName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      birthDay: req.body.birthDay,
+      birthMonth: req.body.birthMonth,
+      birthYear: req.body.birthYear,
+      height: req.body.height,
+      weight: req.body.weight
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function (result) {
+      res.json(result)
+    })
+
+  })
+
+  /*
+    Delete User by ID
+  */
+
+  server.delete('/api/users/:id', function (req, res) {
+
+    models.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (result) {
+      res.json(result)
+    })
+    
+  })
 }
